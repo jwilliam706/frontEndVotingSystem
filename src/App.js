@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import CssBaseline from 'material-ui/CssBaseline';
+import Minidrawer from './Minidrawer';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { date: new Date() };
-  }
   render() {
     return (
-      <div>Front end started! {this.state.date}</div>
+      <div>
+        <CssBaseline />
+        <Minidrawer />
+      </div>
     );
   }
 }
