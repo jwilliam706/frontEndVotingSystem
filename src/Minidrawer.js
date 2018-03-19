@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import classNames from 'classnames';
@@ -10,16 +10,17 @@ import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import AccountIcon from 'material-ui-icons/AccountCircle';
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import ChevronRightIcon from 'material-ui-icons/ChevronRight';
-import { mailFolderListItems, otherMailFolderListItems } from './tileData';
+import { mailFolderListItems, otherMailFolderListItems } from './Menus';
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 430,
+    height: 'auto',
     zIndex: 1,
     overflow: 'hidden',
     position: 'relative',
@@ -78,9 +79,14 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
   },
+  profileMenu: {
+    position: 'absolute',
+    right: '15px',
+    color: 'white',
+  },
 });
 
-class MiniDrawer extends React.Component {
+class MiniDrawer extends Component {
   state = {
     open: false,
   };
@@ -112,8 +118,9 @@ class MiniDrawer extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap>
-              Mini variant drawer
+             Sistema de Votaciones
             </Typography>
+            <IconButton className={classNames(classes.profileMenu)}> <AccountIcon /> </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -135,7 +142,7 @@ class MiniDrawer extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Typography noWrap>You think water moves fast? You should see ice.</Typography>
+          <Typography noWrap>Aqui van a ir los cruds</Typography>
         </main>
       </div>
     );
